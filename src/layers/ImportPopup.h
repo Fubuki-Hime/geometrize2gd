@@ -1,7 +1,6 @@
 #include <Geode/Geode.hpp>
 #include <Geode/ui/Popup.hpp>
 #include <Geode/ui/TextInput.hpp>
-#include <Geode/utils/EventListener.hpp>
 #include <matjson.hpp>
 #include <sstream>
 
@@ -10,7 +9,6 @@ using namespace geode::prelude;
 class ImportPopup : public geode::Popup<cocos2d::CCArray*>, public TextInputDelegate {
 protected:
     int m_zOrder = 0;
-    int m_objscos2d::CCArray*>, TextInputDelegate {
     int m_objsCount = 0;
     float m_drawScale = 1;
     matjson::Value m_jsonSets;
@@ -25,7 +23,6 @@ protected:
     const std::set<int> m_squareTypes = {0, 1, 2};
     const std::set<int> m_validTypes = {5, 3, 4, 32, 8, 16}; // 0, 1, 2
     static constexpr CCSize m_popupSize = CCSize(385.f, 245.f);
-    EventListener<Task<Result<std::filesystem::path>>> m_pickListener;
 protected:
     void parseAndPlace();
     void importJSON(cocos2d::CCObject* sender);
