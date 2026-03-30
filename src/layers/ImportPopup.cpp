@@ -42,23 +42,23 @@ bool ImportPopup::setup(CCArray* selectedObj) {
 
     auto importJsonSpr = ButtonSprite::create("Select File");
     auto importJsonBtn = CCMenuItemSpriteExtra::create(
-        importJsonSpr, this, menu_selector(ImportPopup::importJSON)
-    );
+    importJsonSpr, nullptr, this, menu_selector(ImportPopup::importJSON)
+);
     importJsonBtn->setID("import-btn");
     importJsonBtn->setPosition(importJsonBtn->getPosition() + ImportPopup::m_popupSize / 2);
 
     auto changeJsonSpr = ButtonSprite::create("Change File");
     auto changeJsonBtn = CCMenuItemSpriteExtra::create(
-        changeJsonSpr, this, menu_selector(ImportPopup::importJSON)
-    );
+    changeJsonSpr, nullptr, this, menu_selector(ImportPopup::importJSON)
+);
     changeJsonBtn->setVisible(false);
     changeJsonBtn->setPosition({ImportPopup::m_popupSize.width / 2, ImportPopup::m_popupSize.height / 2 + 90.f});
     changeJsonBtn->setID("change-btn");
 
     auto parseSpr =  ButtonSprite::create("Create");
     auto parseBtn = CCMenuItemSpriteExtra::create(
-        parseSpr, this, menu_selector(ImportPopup::checkAlert)
-    );
+    parseSpr, nullptr, this, menu_selector(ImportPopup::checkAlert)
+);
     parseBtn->setPosition({ImportPopup::m_popupSize.width / 2, ImportPopup::m_popupSize.height / 2 - 95.f});
     parseBtn->setVisible(false);
     parseBtn->setID("convert-btn");
