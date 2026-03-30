@@ -1,12 +1,16 @@
+#include <Geode/Geode.hpp>
+#include <Geode/ui/Popup.hpp>
 #include <Geode/ui/TextInput.hpp>
+#include <Geode/utils/EventListener.hpp>
 #include <matjson.hpp>
 #include <sstream>
 
 using namespace geode::prelude;
 
-class ImportPopup : public geode::Popup<cocos2d::CCArray*>, TextInputDelegate {
+class ImportPopup : public geode::Popup<cocos2d::CCArray*>, public TextInputDelegate {
 protected:
     int m_zOrder = 0;
+    int m_objscos2d::CCArray*>, TextInputDelegate {
     int m_objsCount = 0;
     float m_drawScale = 1;
     matjson::Value m_jsonSets;
